@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 // types
 import { Task } from '../../types/Task';
 
@@ -8,9 +10,16 @@ interface ListItemProps {
 }
 
 export function ListItem({ item }: ListItemProps) {
+  const [isChecked, setIsChecked] = useState(item.done);
+
   return (
     <C.Container>
-      {item.name}
+      <input
+        type="checkbox"
+        checked={isChecked}
+        onChange={(e) => setIsChecked(e.target.checked)}
+      />
+      <label>{item.name}</label>
     </C.Container>
   );
 }

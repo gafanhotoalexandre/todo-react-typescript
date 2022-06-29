@@ -12,7 +12,7 @@ import * as C from './App.styles';
 export default function App() {
   const [todoList, setTodoList] = useState<Task[]>([
     { id: 1, name: 'Comprar pão na padaria', done: false },
-    { id: 2, name: 'Comprar bolo na padaria', done: false },
+    { id: 2, name: 'Comprar bolo na padaria', done: true },
   ]);
 
   return (
