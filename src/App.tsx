@@ -16,6 +16,17 @@ export default function App() {
     { id: 2, name: 'Comprar bolo na padaria', done: true },
   ]);
 
+  function handleAddTask(taskName: string) {
+    let newList = [...todoList];
+    newList.push({
+      id: todoList.length + 1,
+      name: taskName,
+      done: false
+    });
+
+    setTodoList(newList);
+  }
+
   return (
     <C.Container>
       <C.Area>
@@ -24,7 +35,9 @@ export default function App() {
         </C.Header>
 
         {/* Adicionar nova tarefa */}
-        <AddArea />
+        <AddArea
+          onEnter={handleAddTask}
+        />
 
         {/* Lista de tarefas */}
         {todoList.map((item, index) => (
