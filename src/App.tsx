@@ -27,6 +27,15 @@ export default function App() {
     setTodoList(newList);
   }
 
+  function handleTaskChange(id: number, done: boolean) {
+    let newList = [...todoList];
+    for (let i in newList) {
+      if (newList[i].id === id) newList[i].done = done;
+    }
+
+    setTodoList(newList);
+  }
+
   return (
     <C.Container>
       <C.Area>
@@ -44,6 +53,7 @@ export default function App() {
           <ListItem
             key={item.id}
             item={item}
+            onTaskChange={handleTaskChange}
           ></ListItem>
         ))}
 
