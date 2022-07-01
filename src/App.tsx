@@ -2,6 +2,7 @@ import { useState } from 'react';
 
 // components
 import { ListItem } from './components/ListItem';
+import { AddArea } from './components/AddArea';
 
 // types
 import { Task } from './types/Task';
@@ -23,6 +24,7 @@ export default function App() {
         </C.Header>
 
         {/* Adicionar nova tarefa */}
+        <AddArea />
 
         {/* Lista de tarefas */}
         {todoList.map((item, index) => (
